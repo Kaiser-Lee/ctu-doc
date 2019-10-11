@@ -23,7 +23,7 @@ public class SysUserEntity extends BaseEntity {
     private static final long serialVersionUID = -6004966539429393923L;
 
     @Column(name = "USER_NAME")
-    private String userMame;
+    private String userName;
 
     @Column(name = "REAL_NAME")
     private String realName;
@@ -58,12 +58,12 @@ public class SysUserEntity extends BaseEntity {
     @Column(name = "IS_MANAGER")
     private String isManager;
 
-    public String getUserMame() {
-        return userMame;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserMame(String userMame) {
-        this.userMame = userMame;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getRealName() {

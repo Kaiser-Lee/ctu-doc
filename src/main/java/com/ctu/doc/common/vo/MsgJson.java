@@ -4,12 +4,13 @@ import java.io.Serializable;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
+import com.ctu.doc.common.enums.CodeEnum;
 
 /**
  * $.ajax后返回的JSON
  *
- * @author hyq
- * @date May 26, 2014
+ * @author lufangpu
+ * @date 2019-10-11
  */
 public class MsgJson implements Serializable {
 
@@ -73,6 +74,20 @@ public class MsgJson implements Serializable {
         obj.put("obj", this.obj);
         obj.put("attributes", this.attributes);
         return obj.toJSONString();
+    }
+    
+    public MsgJson error() {
+    	this.message = CodeEnum.ERROR.getCode();
+		this.code = CodeEnum.ERROR.getCode();
+		this.success = false;
+    	return this;
+    }
+    
+    public MsgJson error(String msg) {
+    	this.message = msg;
+		this.code = CodeEnum.ERROR.getCode();
+		this.success = false;
+    	return this;
     }
 }
 

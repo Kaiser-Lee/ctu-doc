@@ -23,12 +23,25 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     @Transactional
-    public SysUserEntity saveOrUpdate(SysUserEntity entity) {
-        return sysUserRepository.save(entity);
+    public int saveOrUpdate(SysUserEntity entity) {
+    	SysUserEntity userEntity = sysUserRepository.save(entity);
+    	if(userEntity != null) {
+    		return 1;
+    	}
+        return 0;
     }
 
     @Override
     public SysUserEntity getSysUserByUserName(String userName) {
         return sysUserRepository.getSysUserByUserName(userName);
     }
+
+	@Override
+	public SysUserEntity login(String userName, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+    
+   
+    
 }
