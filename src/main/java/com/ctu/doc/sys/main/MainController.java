@@ -15,4 +15,9 @@ public class MainController {
 	public String login() {
 		return "login";
 	}
+	
+	@RequestMapping("/register")
+	public String register() {
+		return "/admin/user/register/register";
+	}
 }
