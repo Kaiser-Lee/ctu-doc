@@ -3,6 +3,8 @@ package com.ctu.doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.ctu.doc.common.controller.BaseController;
+
 /**
  * 云图文档中心管理系统启动类
  * User: lufangbu
@@ -11,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * version: 1.0.0
  */
 @SpringBootApplication
-public class DocApplication {
+public class DocApplication{
 
     public static void main(String[] args){
         SpringApplication.run(DocApplication.class, args);
