@@ -6,6 +6,7 @@
 <link href="/css/login.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="/font/iconfont.css">
 <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="D:/maven-workspace/ctu-doc/src/main/resources/static/plugins/bootstrap/css/bootstrap.css">
 <style>
 	html body{
 		margin: 0;padding:0;border:0;
@@ -63,7 +64,7 @@
 	.login-content{
 		display: block;
 		width: 330px;
-		margin-top: 80px;
+		margin-top: 100px;
 	}
 	.master-login-title{
 		width: 100%;
@@ -85,16 +86,72 @@
 	    text-align: right;
 	    zoom: 1;
 	}
+	.left-link{
+		display: block;
+	    width: 100%;
+	    height: 220px;
+	    margin-top: 100px;
+	}
+	.link-title{	
+		display: block;
+	    text-align: left;
+	    line-height: 40px;
+	    font-size: 28px;
+	    color: #181818;
+	    letter-spacing: 0;
+	    margin-bottom: 20px;
+	    transition: all .3s;
+	}
+	.link-content{
+		text-align: left;
+	    line-height: 30px;
+	    font-size: 16px;
+	    color: #999;
+	    letter-spacing: .53px;
+	    display: block;
+	}
+	.main-top{
+		width: 100%;
+		height: 60px;
+		border-bottom: 1px solid #999;
+		position: absolute;
+		display:flex;
+  		/* justify-content:center; */
+	}
+	.account-top{
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		width: 50%;
+		border-right: 1px solid #999;
+	}
+	.other-top{
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		width: 50%;
+	}
 </style>
 </head>
 <body>
 	<div class="login-container">
 		<div class="login-header"></div>
 		<div class="login-main">
-			<div class="main-left"></div>
+			<div class="main-left">
+				<a class="left-link">
+					<span class="link-title">高性能云数据库限时2折</span>
+					<span class="link-content">MySQL/Redis等多款流行数据库首月2折</span>
+					<span class="link-content">更可1元体验PB级实时数据仓库</span>
+					<span class="link-content"> 经历届双11检验，稳定、安全、可靠</span>
+				</a>
+			</div>
 			
 			<!-- 登录模块 -->
 			<div class="main-right">
+				<div class="main-top">
+					<div class="account-top">账号密码登录</div>
+					<div class="other-top">其他</div>
+				</div>
 				<div class="login-content">
 					<div class="qrcode"><!-- 二维码 -->
 						<div class="master-login-title">密码登录</div>
@@ -116,10 +173,11 @@
 	                        <div class="input-group">
 	                       		<button id="loginBtn" type="button" class="btn btn-info">登 录</button>
 	                        </div>
-	                        
+	                       
 	                        <div class="login-blocks login-links">
 	                        	<a href="#">忘记密码</a>
-	                        	<a href="/register">免费注册</a>
+	                        	<!-- <a href="/register">免费注册</a> -->
+	                        	<a href="D:/maven-workspace/ctu-doc/src/main/resources/templates/admin/user/register/register.html">免费注册</a>
 	                        </div>
 						
 						</div>
