@@ -24,10 +24,12 @@ public class BaseEntity implements Serializable {
     @GeneratedValue(generator = "system-uuid")
     private String id;
 
-    @Column(name = "CREATE_TIME")
+    @Column(name = "CREATE_TIME", nullable = false)
+	@org.hibernate.annotations.CreationTimestamp  // 由数据库自动创建时间
     private Date createTime;
 
     @Column(name = "UPDATE_TIME")
+    @org.hibernate.annotations.CreationTimestamp  // 由数据库自动创建时间
     private Date updateTime;
 
     @Column(name = "CREATE_USER")

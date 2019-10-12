@@ -1,0 +1,90 @@
+	html body{
+		margin: 0;padding:0;border:0;
+	}
+	a{
+		text-decoration: none;
+		color: #9b9ea0;
+	}
+	.register-container{
+		/* height: 740px; */
+	}
+	.register-header{
+		display: block;
+		width: 100%;
+		height: 80px;
+		background-color: #FFFFFF;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+		box-sizing: border-box;
+		position: relative;
+	    z-index: 1000;
+	    clear: both;
+	}
+	.register-main{
+		display: block;
+		width: 100%;
+		height: 640px;
+		background-color: #F5F5F6;
+		display:flex;
+  		justify-content:center;
+	}
+	.register-foot{
+		display: block;
+		width: 100%;
+		height: 100px;
+		background-color: #F5F5F6;
+	}
+	.main-content{
+		width: 1000px;
+		background-color: #fff;
+		position: relative;
+		margin-top: 80px;
+		box-shadow: 0 2px 15px rgba(0,0,0,.15);
+		display: block;
+	}
+	.content{
+		width: 320px;
+	    margin: 0 auto;
+	    text-align: center
+	}
+	.head{
+		padding-top: 40px;
+	    font-size: 30px;
+	    color: #373d41;
+	    letter-spacing: 1px;
+	    line-height: 36px
+	}
+	.tips{
+		position: absolute;
+	    top: 43px;
+	    right: 40px;
+	    font-size: 12px;
+	    color: #73777a;
+	    letter-spacing: .4px;
+	    line-height: 30px;
+	    text-align: left;
+	}
+	.tips-link{
+		color: #00c1de
+	}
+	.input-group{
+		margin-top: 20px;
+		width: 100%;
+	}
+	.register-form{
+		margin-top: 40px;
+	}
+	#registerBtn{
+		color: #fff;
+		background-color: #00b7d3;
+		width: 100%;
+		border: 0px;
+		height: 40px;
+	}
+	#registerBtn>h:hover{
+		color: #fff;
+		background-color: #00b7d3;
+		
+	}
+	.form-group{
+		margin-top: 25px;
+	}

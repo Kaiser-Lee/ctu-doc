@@ -1,6 +1,7 @@
 package com.ctu.doc.sys.login;
 
 import java.security.KeyPair;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ctu.doc.common.enums.CodeEnum;
+import com.ctu.doc.common.utils.MD5Utils;
 import com.ctu.doc.common.utils.RSAUtils;
 import com.ctu.doc.common.vo.MsgJson;
 import com.ctu.doc.common.vo.UserInfo;
@@ -40,30 +42,33 @@ public class SysLoginController {
 	public MsgJson login(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
 		MsgJson msg = new MsgJson();
 		try {
-			KeyPair keyPair = RSAUtils.getKeyPair();
+			//KeyPair keyPair = RSAUtils.getKeyPair();
 			String userName = request.getParameter("userName");
 			String password  = request.getParameter("password");
 			if(StringUtils.isEmpty(userName) || StringUtils.isEmpty(password)) {
 				msg.setCode(CodeEnum.NULL_USERNAME_OR_PWD.getCode());
 				msg.setMessage(CodeEnum.NULL_USERNAME_OR_PWD.getDisplayName());
+				msg.setSuccess(false);
 				return msg;
 			}
 			
-			String publicKey = new String(Base64.encodeBase64(keyPair.getPublic().getEncoded()));
+			//String publicKey = new String(Base64.encodeBase64(keyPair.getPublic().getEncoded()));
             // RSA加密
-            userName = RSAUtils.encrypt(userName, RSAUtils.getPublicKey(publicKey));
-            password = RSAUtils.encrypt(password, RSAUtils.getPublicKey(publicKey));
-            
-            SysUserEntity userEntity = sysUserService.getSysUserByUserName(userName);
-            if(userEntity == null) {
+            //userName = RSAUtils.encrypt(userName, RSAUtils.getPublicKey(publicKey));
+            //password = RSAUtils.encrypt(password, RSAUtils.getPublicKey(publicKey));
+            password = MD5Utils.encrypt(userName, password);
+            List<SysUserEntity> userEntityList = sysUserService.getSysUserByUserName(userName);
+            if(userEntityList == null) {
             	msg.setCode(CodeEnum.ERROR_USER_NOT.getCode());
 				msg.setMessage(CodeEnum.ERROR_USER_NOT.getDisplayName());
+				msg.setSuccess(false);
 				return msg;
             }
-            userEntity = sysUserService.login(userName, password);
+            SysUserEntity userEntity = sysUserService.login(userName, password);
             if(userEntity == null) {
             	msg.setCode(CodeEnum.ERROR_PASSWORD.getCode());
 				msg.setMessage(CodeEnum.ERROR_PASSWORD.getDisplayName());
+				msg.setSuccess(false);
 				return msg;
             }
             

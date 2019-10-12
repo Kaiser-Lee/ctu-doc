@@ -1,5 +1,7 @@
 package com.ctu.doc.sys.user.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,14 +34,20 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public SysUserEntity getSysUserByUserName(String userName) {
+    public List<SysUserEntity> getSysUserByUserName(String userName) {
         return sysUserRepository.getSysUserByUserName(userName);
     }
 
 	@Override
 	public SysUserEntity login(String userName, String password) {
 		// TODO Auto-generated method stub
-		return null;
+		return sysUserRepository.login(userName, password);
+	}
+
+	@Override
+	public List<SysUserEntity> validatorUser(String userName, String id) {
+		// TODO Auto-generated method stub
+		return sysUserRepository.validatorUser(userName, id);
 	}
     
    
