@@ -25,3 +25,5 @@ spring:
      encoding: utf-8
      cache: false
      mode: HTML5
+     prefix: classpath:/templates/
+     suffix: .html
