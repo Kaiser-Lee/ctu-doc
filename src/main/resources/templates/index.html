@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
 <meta charset="UTF-8">
-<title>云图文档中心</title>
-<script src="/js/jquery.min.js"></script>
+<head th:include="include :: header"></head>
 <style type="text/css">
+html,body{margin:0px; padding: 0px;}
 .page-container{
-	
-}
-.page-head{
-	
-}
-.page-content{
-	
+	background-color: #ECEFF4;
 }
 </style>
-
-</head>
 <body>
-	<div class="page-container">11
-		<div th:insert="header :: header"></div>
-	</div>
-	<div id=page-header></div>
-    <div id="page2"></div>
-    
-
-
-    
+<div class="page-container">
+	<div id="page-header">
+        <iframe width="100%" src="common/frame/header.html"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+    </div>
+    <div id="page-content">
+    	<iframe width="100%" src="common/frame/content.html"  frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+    </div>
+</div>
+<head th:include="include :: footer"></head>
 </body>
 </html>

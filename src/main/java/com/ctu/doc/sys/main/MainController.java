@@ -11,9 +11,9 @@ public class MainController {
 		return "login";
 	}
 	
-	@RequestMapping("/main")
+	@RequestMapping(value= "main")
 	public String main() {
-		return "index";
+		return "/index";
 	}
 	
 	@RequestMapping("/login")
@@ -23,6 +23,11 @@ public class MainController {
 	
 	@RequestMapping("/register")
 	public String register() {
-		return "/admin/user/register/register";
+		return "admin/user/register/register";
+	}
+	
+	@RequestMapping("/common/frame/header")
+	public String header() {
+		return "/common/frame/header";
 	}
 }
