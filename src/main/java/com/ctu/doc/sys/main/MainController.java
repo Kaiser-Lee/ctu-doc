@@ -30,4 +30,9 @@ public class MainController {
 	public String header() {
 		return "/common/frame/header";
 	}
+	
+	@RequestMapping("common/frame/content")
+	public String content() {
+		return "/common/frame/content";
+	}
 }
