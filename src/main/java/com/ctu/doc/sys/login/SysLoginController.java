@@ -77,7 +77,7 @@ public class SysLoginController {
             userInfo.setNick(userEntity.getNick());
             session.setAttribute("SYS_USER_INFO", userInfo);
             session.setAttribute("userName", userEntity.getUserName());
-            msg.setObj("/main");
+            msg.setObj("/index");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
