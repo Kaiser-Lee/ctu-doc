@@ -8,12 +8,12 @@ public class MainController {
 	
 	@RequestMapping("/")
 	public String root() {
-		return "login";
+		return "admin/blockchain/index";
 	}
 	
 	@RequestMapping(value= "index")
 	public String index() {
-		return "index";
+		return "admin/blockchain/index";
 	}
 	
 	@RequestMapping(value= "main")
