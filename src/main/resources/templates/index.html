@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <meta charset="UTF-8">
-<head th:include="include :: header"></head>
+<head th:replace="~{common/fragments/include :: include}"></head>
 <style type="text/css">
 html,body{margin:0px; padding: 0px;}
 .page-container{
@@ -91,56 +93,15 @@ li{list-style: none;}
 }
 </style>
 <body>
-<div class="page-container">
-	<div class="page-header">
-		<div class="page-header-nav">
-			<div class="page-header-logo">1</div>
-			<div class="page-header-search">2</div>
-			<div class="page-header-set">3</div>
-			<div class="page-header-user">4</div>
-		</div>
-    </div>
-    <div class="page-content">
-    	<div class="page-left-menu">
-    		<ul class="page-left-menu-ul">
-    			<li>
-    				<a class="nav-line">
-    					<i class="fa fa-cloud"></i>
-    					<span class="nav-line-title">新增</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a class="nav-line">
-    					<i class="fa fa-cloud"></i>
-    					<span class="nav-line-title">从模板复制</span>
-    				</a>
-    			</li>
-    			<hr style="height:1px;border:none;border-top:1px solid #555555;" />
-    			<li>
-    				<a class="nav-line">
-    					<i class="fa fa-icon"></i>
-    					<span class="nav-line-title">管理</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a class="nav-line">
-    					<i class="fa fa-icon"></i>
-    					<span class="nav-line-title">应用</span>
-    				</a>
-    			</li>
-    		</ul>
-    	</div>
-    	<div class="page-iframe">
-    		<iframe width="100%" src="" th:href="@{/main}" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-    	</div>
-    </div>
-</div>
-<head th:include="include :: footer"></head>
-<script type="text/javascript">
-var height = window.screen.availHeight*0.9;
-$(".page-container").css("height", height+"px");
-$(".page-content").css("height", (height-50)+"px");
-$(".page-left-menu").css("height", (height-50)+"px");
-</script>
+
+	<div th:replace="~{common/fragments/main-header :: main-header}"></div>
+
+	<!--左侧导航开始-->
+	<div th:replace="~{common/fragments/main-left :: main-left}"></div>
+	<!--左侧导航结束-->
+	<!--右侧部分开始-->
+	<div th:replace="~{common/fragments/main-content :: main-content}"></div>
+	<!--右侧部分结束-->
+
 </body>
 </html>

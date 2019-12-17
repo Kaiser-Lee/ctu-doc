@@ -8,12 +8,12 @@ public class MainController {
 	
 	@RequestMapping("/")
 	public String root() {
-		return "admin/blockchain/index";
+		return "login";
 	}
 	
 	@RequestMapping(value= "index")
 	public String index() {
-		return "admin/blockchain/index";
+		return "index";
 	}
 	
 	@RequestMapping(value= "main")
@@ -30,14 +30,5 @@ public class MainController {
 	public String register() {
 		return "admin/user/register/register";
 	}
-	
-	@RequestMapping("/common/frame/header")
-	public String header() {
-		return "/common/frame/header";
-	}
-	
-	@RequestMapping("common/frame/content")
-	public String content() {
-		return "/common/frame/content";
-	}
+
 }
